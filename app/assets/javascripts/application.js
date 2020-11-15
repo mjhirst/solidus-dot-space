@@ -16,4 +16,3 @@
 //= require turbolinks
 //= require_tree .
 //= require three/build/three.js
-//= require @rails/actioncable/app/assets/javascripts/action_cable.js

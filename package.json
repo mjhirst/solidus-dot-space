@@ -1,14 +1,9 @@
 {
   "dependencies": {
-    "@rails/actioncable": "^6.0.3-4",
-    "@rails/webpacker": "5.2.1",
     "bulma": "^0.9.1",
     "three": "^0.122.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
-  },
-  "scripts": {
-    "postinstall": "cp node_modules/@rails/actioncable/app/assets/javascripts/action_cable.js app/javascript"
   }
 }
