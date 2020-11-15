@@ -1,3 +1,4 @@
+
 <div class="container">
 <%= render 'main_nav' %>
 <% if current_user %>
@@ -7,4 +8,14 @@
   <%= link_to 'Sign Up', signup_path %> or 
   <%= link_to 'Log In', login_path %>
 <% end %><p id=”notice”><%= notice %></p>
+
+<div id="messages">
+  <%= render @messages %>
+</div>
+
+<form>
+  <label>Say something:</label><br>
+  <input type="text" data-behavior="room_speaker">
+</form>
+
 </div> <!-- end container --->
