@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@rails/webpacker": "5.2.1",
     "bulma": "^0.9.1",
     "three": "^0.122.0"
   },

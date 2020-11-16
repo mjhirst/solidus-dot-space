@@ -21,18 +21,21 @@ jQuery(document).on 'turbolinks:load', ->
     },
 
     connected: ->
-      console.log('connected')
+      console.log('Connected to RoomChannel')
       addConnection(room)
 # Called when the subscription is ready for use on the server
 
     disconnected: ->
-      console.log('disconnected')
+      console.log('Disconnected from RoomChannel')
       removeConnection(room)
 # Called when the subscription has been terminated by the server
 
     received: (data) ->
-      console.log(data['message'])
-      $('#messages').append("<div>" + data['message'] + "</div>")
+      # console.log(data['message'])
+      $('#messages').append('<div>' + data['message'] + '</div>')
+      x = data['message'].split(' ')
+      $('#mouseX').html(x[2].replace('x:', ''))
+      $('#mouseY').html(x[3].replace('y:', ''))
 
     speak: (message) ->
       @perform 'speak', message: message

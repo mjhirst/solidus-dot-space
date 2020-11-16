@@ -9,13 +9,47 @@
   <%= link_to 'Log In', login_path %>
 <% end %><p id=”notice”><%= notice %></p>
 
-<div id="messages">
-  <%= render @messages %>
+<!-- Track mouse position and broadcast -->
+<script>
+  onmousemove = function(e){App.room.speak('mouse location x:' + e.clientX + ' y:' + e.clientY)}
+</script>
+
+<div class="field is-grouped is-grouped-multiline">
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark">x</span>
+      <span class="tag is-danger" id="mouseX">000</span>
+    </div>
+  </div>
+
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark">y</span>
+      <span class="tag is-success" id="mouseY">000</span>
+    </div>
+  </div>
+  
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark">clients</span>
+      <span class="tag is-success" id="clientsTag"><%= ActionCable.server.connections.length %></span>
+    </div>
+  </div>
 </div>
+
 
 <form>
   <label>Say something:</label><br>
   <input type="text" data-behavior="room_speaker">
 </form>
+
+<br  />
+<br  />
+
+<div id="messages" class="box">
+  <h1 class="subtitle">Websocket Messages</h1>
+  <%= render @messages %>
+</div>
+
 
 </div> <!-- end container --->
