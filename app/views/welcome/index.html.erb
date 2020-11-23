@@ -9,6 +9,8 @@
   <%= link_to 'Log In', login_path %>
 <% end %><p id=”notice”><%= notice %></p>
 
+<div class="columns">
+  <div class="column is-two-thirds">
 <div class="field is-grouped is-grouped-multiline">
   <div class="control">
     <div class="tags has-addons">
@@ -32,101 +34,23 @@
   </div>
 </div>
 
-<script>
-  
-  //Load when the DOM is ready or Canvas will be null
-  $(document).on('turbolinks:load', function() {
-    
-    const canvas = document.querySelector("#c");
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-  
-    //1.
-    //Create a camera
-    const fov = 75;
-    const aspect = 2; // the canvas default
-    const near = 0.1;
-    const far = 5;
-    const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-    camera.position.z = 2;
-  
-    //2.
-    //Create a Scene
-    const scene = new THREE.Scene();
-    
-    //7.
-    //Add a directional light slightly above and to the left of the camera
-    {
-      const color = 0xFFFFFF;
-      const intensity = 1;
-      const light = new THREE.DirectionalLight(color, intensity);
-      light.position.set(-1, 2, 4);
-      scene.add(light);
-    }
-  
-    //3.
-    //Create a box
-    const boxWidth = 1;
-    const boxHeight = 1;
-    const boxDepth = 1;
-    const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
-  
-    //4.
-    //Make a material
-    const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
-    const cube = new THREE.Mesh(geometry, material);
-    cube.name = "objectName";
-  
-    //5.
-    //Add to Scene
-    scene.add(cube);
-    renderer.render(scene, camera);
-    
-  // Start - Get mouse position
-  var posx = 0;
-  var posy = 0;
-  
-  document.addEventListener('mousemove', onMouseMove, false);
-  document.addEventListener('App.room.received', harp);
-  console.log(App.room);
-  //////
-  function harp(data) {
-  console.log(data);
-  };
-  //////
-  
-  function onMouseMove(e) {
-      posx = e.clientX;
-      posy = e.clientY;
-      App.room.speak('mouse location x:' + posy + ' y:' + posx)
-      //console.log(posy, posx)
-      
-      //6.
-      //Simple rotation
-      //Client X and Y swapped to make more sense and divided by 100 to stop superfast rotation
-      cube.rotation.x = posy / 100;
-      cube.rotation.y = -posx / 100;
-      renderer.render(scene, camera);
-  }
-  function getMouseX() { return posx; }
-  function getMouseY() { return posy; }
-  // End - Get mouse position
-  
-  });
-</script>
-<canvas class="box" id="c"></canvas>
+<canvas class="box" id="c" style="width: 100%"></canvas>
 
 <form>
   <label>Say something:</label><br>
   <input type="text" data-behavior="room_speaker">
 </form>
 
-<br  />
-<br  />
+  </div><!-- End Column -->
 
-<div id="messages" class="box">
+  <div class="colum">
+
+<div id="messages">
   <h1 class="subtitle">Websocket Messages</h1>
   <%= render @messages %>
 </div>
 
+  </div>
+</div> <!-- End Columns -->
 
 </div> <!-- end container --->

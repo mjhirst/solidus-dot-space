@@ -34,8 +34,14 @@ jQuery(document).on 'turbolinks:load', ->
       # console.log(data['message'])
       $('#messages').append('<div>' + data['message'] + '</div>')
       x = data['message'].split(' ')
-      $('#mouseX').html(x[2].replace('x:', ''))
-      $('#mouseY').html(x[3].replace('y:', ''))
+      dimx = x[2].replace('x:', '')
+      dimy = x[3].replace('y:', '')
+      console.log(dimx, dimy)
+      $('#mouseX').html(dimx)
+      $('#mouseY').html(dimy)
+      cube.rotation.x = dimx / 100
+      cube.rotation.y = -dimy / 100
+      renderer.render(scene, camera)
 
     speak: (message) ->
       @perform 'speak', message: message
