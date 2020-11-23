@@ -1,11 +1,30 @@
-<p id=”alert”><%= alert %></p><h1>Login</h1><%= form_tag sessions_path do |form| %>
-  <div class=”field”>
-	<%= label_tag :email %>
-	<%= text_field_tag :email %>
-  </div>  <div class=”field”>
-	<%= label_tag :password %>
-	<%= password_field_tag :password %>
-  </div>  <div class=”actions”>
-	<%= submit_tag 'Login' %>
-  </div>
-<% end %>
+<div class="hero is-large is-fullheight">
+	<%= render 'main_nav' %>
+	<div class="container">
+		<div class="columns">
+		<div class="column">
+		</div>
+		<div class="column is-two-thirds">
+	<div class="box">
+			<h1 class="title">Log In</h1>
+			<%= form_for(@user) do |form| %>
+				<p>Email</p>
+			  <%= form.email_field :email, :placeholder => "zaha@hadid.com", class: "input" %>
+				  <br  />
+				  <br  />
+				  <p>Password</p>
+			  <%= form.password_field :password, class: "input" %>
+				  <br  />
+			  <%= form.submit "Create an account", class: "button is-danger is-warning is-fullwidth" %>
+				  <br  />
+			<% end %>
+			<a class="button is-inverted is-danger is-fullwidth" href="/login">Already have an account?</a>
+			<br  />
+			<br  />
+			</div>
+		</div>
+			<div class="column">
+			</div>
+		</div>
+	</div>
+</div>

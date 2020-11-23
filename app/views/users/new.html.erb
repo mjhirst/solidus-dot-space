@@ -1,5 +1,31 @@
-<h1>New User</h1>
-
-<%= render 'form', user: @user %>
-
-<%= link_to 'Back', users_path %>
+<div class="hero is-large is-fullheight">
+	<%= render 'main_nav' %>
+	<div class="container">
+	<div class="box has-text-centered">
+			<h1 class="title">Sign up</h1>
+			<%= form_for(@user) do |form| %>
+			<p>First Name</p>
+				<%= form.text_field :first_name, :placeholder => "Zaha", class: "input" %>
+				<br  />
+				<br  />
+			<p>Last Name</p>
+			<%= form.text_field :last_name, :placeholder => "Hadid", class: "input" %>
+				<br  />
+				<br  />
+				<p>Email</p>
+			  <%= form.email_field :email, :placeholder => "zaha@hadid.com", class: "input" %>
+				  <br  />
+				  <br  />
+				  <p>Password</p>
+			  <%= form.password_field :password, class: "input" %>
+				  <br  />
+				  <br  />
+			  <%= form.submit "Create an account", class: "button is-primary is-fullwidth" %>
+				  <br  />
+			<% end %>
+			<br  />
+			<br  />
+			</div>
+		</div>
+	</div>
+</div>
