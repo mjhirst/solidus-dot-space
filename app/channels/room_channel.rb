@@ -9,7 +9,8 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Message.create!
+    # Makes too many!
+    # Message.create! 
     ActionCable.server.broadcast 'room_channel_1', message: data['message']
   end
   
