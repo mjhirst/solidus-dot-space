@@ -3,7 +3,7 @@
 <%= render 'main_nav' %>
 
 <div class="columns">
-  <div class="column is-two-thirds">
+  <div class="column is-four-fifths is-desktop">
 <div class="field is-grouped is-grouped-multiline">
   <div class="control">
     <div class="tags has-addons">
@@ -27,7 +27,9 @@
   </div>
 </div>
 
-<canvas class="box" id="c" style="width: 100%"></canvas>
+<canvas class="box" id="c">
+  
+</canvas>
 
 <form>
   <label>Say something:</label><br>
@@ -36,14 +38,13 @@
 
   </div><!-- End Column -->
 
-  <div class="colum">
-
-<div id="messages">
-  <h1 class="subtitle">Websocket Messages</h1>
-  <%= render @messages %>
-</div>
-
+  <div class="colum is-desktop">
+    <div id="messages">
+      <h1 class="subtitle">Websocket Messages</h1>
+      <%= render @messages %>
+    </div>
   </div>
+
 </div> <!-- End Columns -->
 
 </div> <!-- end container --->
