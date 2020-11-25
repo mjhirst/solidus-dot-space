@@ -98,4 +98,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   config.webpacker.check_yarn_integrity = false
+  
+  config.action_mailer.default_url_options = { host: 'solidus-dot-space.herokuapp.com' }
 end
