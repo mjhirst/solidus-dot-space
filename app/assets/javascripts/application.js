@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require activestorage
 //= require turbolinks
+//= require three
+//= require OBJLoader
 //= require_tree .
-//= require three/build/three.js

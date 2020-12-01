@@ -29,6 +29,9 @@ $(document).on("turbolinks:load", function () {
     scene.add(light);
   }
 
+  //Load the ObjLoader
+  let loader = new THREE.OBJLoader();
+
   //3.
   //Create a box
   const boxWidth = 1;
@@ -38,9 +41,9 @@ $(document).on("turbolinks:load", function () {
 
   //4.
   //Make a material
-  const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
+  const material = new THREE.MeshPhongMaterial({ color: 0x010101 });
   cube = new THREE.Mesh(geometry, material);
-  console.log(JSON.stringify(cube));
+  //console.log(JSON.stringify(cube));
 
   //5.
   //Add to Scene
