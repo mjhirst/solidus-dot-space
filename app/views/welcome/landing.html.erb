@@ -1,0 +1,46 @@
+<body style="background-color: #22262d">
+
+<div class="container">
+<br  />
+<br  />
+<nav class="navbar is-dark"
+    role="navigation"
+    aria-label="main navigation"
+    style="border-radius: 30px; background-color: #101113;">
+  <div class="navbar-brand">
+  <a class="navbar-item" href="https://solidus.space">
+  <%= image_tag(asset_path 'solidus_logo.png', height: 28)%>
+  </a>
+
+  <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">Home</a>
+  
+    <div class="navbar-item">
+    <div class="buttons">
+      <%= link_to "Sign up", new_user_registration_path, class: "button is-primary is-rounded"%>
+      <%= link_to "Log in", new_user_session_path, class: "button is-light is-rounded" %>
+    </div>
+    </div>
+  </div>
+</nav>
+<br  />
+<br  /> <!-- End Nav -->
+
+<div class="tags has-addons">
+  <span class="tag is-dark">clients</span>
+  <span class="tag is-success" id="clientsTag"><%= ActionCable.server.connections.length %></span>
+</div>
+
+<canvas id="c" style="width: 100%"></canvas>
+
+</div> <!-- End Container -->
+
+</body>

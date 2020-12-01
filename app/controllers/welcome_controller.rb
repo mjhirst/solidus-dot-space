@@ -4,4 +4,8 @@ class WelcomeController < ApplicationController
 		@messages = Message.all
 	end
 	
+	def landing
+		
+	end
+	
 end
