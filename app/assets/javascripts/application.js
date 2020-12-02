@@ -16,4 +16,7 @@
 //= require turbolinks
 //= require three
 //= require OBJLoader
+//= require OrbitControls
+//= require MTLLoader
+//- require MtlObjBridge
 //= require_tree .

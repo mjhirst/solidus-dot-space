@@ -31,6 +31,9 @@ $(document).on("turbolinks:load", function () {
 
   //Load the ObjLoader
   let loader = new THREE.OBJLoader();
+  loader.load("house.obj", (root) => {
+    scene.add(root);
+  });
 
   //3.
   //Create a box
@@ -49,6 +52,14 @@ $(document).on("turbolinks:load", function () {
   //Add to Scene
   scene.add(cube);
   renderer.render(scene, camera);
+
+  //6.
+  //Orbit Controls for nicer handling
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.25;
+  controls.enableZoom = true;
+  controls.autoRotate = true;
 
   // Start - Get mouse position
   var posx = 0;
