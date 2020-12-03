@@ -59,8 +59,6 @@ end
 
 gem 'jquery-rails'
 
-gem 'webpacker', '~> 5.0'
-
 gem 'redis', '~> 4.2.2'
 
 gem 'devise'
