@@ -2,7 +2,7 @@
  * Development repository: https://github.com/kaisalmen/WWOBJLoader
  */
 
-const MtlObjBridge = {
+MtlObjBridge = {
   /**
    *
    * @param processResult
@@ -25,7 +25,7 @@ const MtlObjBridge = {
   addMaterialsFromMtlLoader: function (materialCreator) {
     let newMaterials = {};
 
-    if (materialCreator instanceof MTLLoader.MaterialCreator) {
+    if (materialCreator instanceof THREE.MTLLoader.MaterialCreator) {
       materialCreator.preload();
       newMaterials = materialCreator.materials;
     }
@@ -33,5 +33,3 @@ const MtlObjBridge = {
     return newMaterials;
   },
 };
-
-export { MtlObjBridge };

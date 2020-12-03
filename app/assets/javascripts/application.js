@@ -14,9 +14,14 @@
 //= require jquery_ujs
 //= require activestorage
 //= require turbolinks
+//= require three-module
 //= require three
-//= require OBJLoader
+//= require MaterialHandler
+//= require MeshReceiver
+//= require OBJLoader2Parser
+//= require OBJLoader2
+//= require Object3D
+//= require MtlObjBridge
 //= require OrbitControls
 //= require MTLLoader
-//- require MtlObjBridge
 //= require_tree .
