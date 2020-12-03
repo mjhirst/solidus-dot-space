@@ -1,0 +1,50 @@
+
+<div class="container">
+<%= render 'main_nav' %>
+
+<div class="columns">
+  <div class="column is-four-fifths is-desktop">
+<div class="field is-grouped is-grouped-multiline">
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark">x</span>
+      <span class="tag is-danger" id="mouseX">000</span>
+    </div>
+  </div>
+
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark">y</span>
+      <span class="tag is-success" id="mouseY">000</span>
+    </div>
+  </div>
+  
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark">clients</span>
+      <span class="tag is-success" id="clientsTag"><%= ActionCable.server.connections.length %></span>
+    </div>
+  </div>
+</div>
+
+<canvas class="box" id="c">
+  
+</canvas>
+
+<form>
+  <label>Say something:</label><br>
+  <input type="text" data-behavior="room_speaker">
+</form>
+
+  </div><!-- End Column -->
+
+  <div class="colum is-desktop">
+    <div id="messages">
+      <h1 class="subtitle">Websocket Messages</h1>
+      <%= render @messages %>
+    </div>
+  </div>
+
+</div> <!-- End Columns -->
+
+</div> <!-- end container --->

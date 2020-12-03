@@ -22,9 +22,10 @@ jQuery(document).on 'turbolinks:load', ->
     dimy = x[3].replace('y:', '')
     $('#mouseX').html(dimx)
     $('#mouseY').html(dimy)
-    cube.rotation.x = dimx / 100
-    cube.rotation.y = -dimy / 100
-    renderer.render(scene, camera)
+    console.log("X", dimx, "Y", dimy);
+    #cube.rotation.x = dimx / 100
+    #cube.rotation.y = -dimy / 100
+    #renderer.render(scene, camera)
 
   speak: (message) ->
     @perform 'speak', message: message
