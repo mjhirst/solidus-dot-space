@@ -67,7 +67,6 @@ Rails.application.configure do
   
   config.cache_classes = true
   config.serve_static_assets = true
-  config.assets.compile = true
   config.assets.digest = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -99,5 +98,5 @@ Rails.application.configure do
   
   config.webpacker.check_yarn_integrity = false
   
-  config.action_mailer.default_url_options = { host: 'solidus-dot-space.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'solidus.space' }
 end
