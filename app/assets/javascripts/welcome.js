@@ -1,5 +1,5 @@
 //Load when the DOM is ready or Canvas will be null
-$(document).on("turbolinks:load", function () {
+$(document).ready(function () {
     const canvas = document.querySelector('#c');
     renderer = new THREE.WebGLRenderer({canvas, alpha: true, antialias: true});
 
@@ -43,7 +43,7 @@ $(document).on("turbolinks:load", function () {
         objLoader.addMaterials(materials);
         objLoader.load('solidus_launch.obj', (root) => {
           obj = root;
-          scene.add(obj);
+          scene.add(root);
         });
       });
     }
@@ -52,8 +52,8 @@ $(document).on("turbolinks:load", function () {
   
     function resizeRendererToDisplaySize(renderer) {
       const canvas = renderer.domElement;
-      const width = canvas.clientWidth * 2;
-      const height = canvas.clientHeight * 2;
+      const width = canvas.clientWidth;// * 2;
+      const height = canvas.clientHeight;//* 2;
       const needResize = canvas.width !== width || canvas.height !== height;
       if (needResize) {
         renderer.setSize(width, height, false);

@@ -12,16 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require three/build/three.min.js
+//= require three/examples/jsm/loaders/obj2/OBJLoader2Parser.js
+//= require three/examples/js/controls/OrbitControls
+//= require three/examples/js/loaders/MTLLoader
 //= require activestorage
-//= require turbolinks
-//= require three-module
-//= require three
-//= require MaterialHandler
-//= require MeshReceiver
-//= require OBJLoader2Parser
-//= require OBJLoader2
-//= require Object3D
-//= require MtlObjBridge
-//= require OrbitControls
-//= require MTLLoader
 //= require_tree .
