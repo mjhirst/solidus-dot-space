@@ -3,6 +3,7 @@
     "@rails/ujs": "^6.0.0",
     "bulma": "^0.9.1",
     "three": "^0.123.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "yarn": "^1.22.10"
   }
 }
