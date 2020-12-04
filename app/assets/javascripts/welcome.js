@@ -52,8 +52,8 @@ $(document).ready(function () {
   
     function resizeRendererToDisplaySize(renderer) {
       const canvas = renderer.domElement;
-      const width = canvas.clientWidth;// * 2;
-      const height = canvas.clientHeight;//* 2;
+      const width = canvas.clientWidth * 2;
+      const height = canvas.clientHeight * 2;
       const needResize = canvas.width !== width || canvas.height !== height;
       if (needResize) {
         renderer.setSize(width, height, false);

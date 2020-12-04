@@ -1,63 +1,32 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-	  <div class="navbar-brand">
-		<a class="navbar-item" href="https://bulma.io">
-		<%= image_tag(asset_path 'solidus_logo.png', height: 28)%>
-		</a>
-	
-		<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-		  <span aria-hidden="true"></span>
-		  <span aria-hidden="true"></span>
-		  <span aria-hidden="true"></span>
-		</a>
-	  </div>
-	
-	  <div id="navbarBasicExample" class="navbar-menu">
-		<div class="navbar-start">
-		  <a class="navbar-item">
-			Home
-		  </a>
-	
-	<!-- Not needed
-		  <a class="navbar-item">
-			Documentation
-		  </a>
-	
-		  <div class="navbar-item has-dropdown is-hoverable">
-			<a class="navbar-link">
-			  More
-			</a>
-	
-			<div class="navbar-dropdown">
-			  <a class="navbar-item">
-				About
-			  </a>
-			  <a class="navbar-item">
-				Jobs
-			  </a>
-			  <a class="navbar-item">
-				Contact
-			  </a>
-			  <hr class="navbar-divider">
-			  <a class="navbar-item">
-				Report an issue
-			  </a>
-			</div>
-		</div>
-			
-			End Not needed -->
-		</div>
-		
-		
-	
-		<div class="navbar-end">
-		  <div class="navbar-item">
-			<div class="buttons">
-			  <%= link_to "Sign up", new_user_registration_path, class: "button is-primary"%>
-			  <%= link_to "Log in", new_user_session_path, class: "button is-light" %>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</nav>
-	<br  />
-	<br  />
+<br  />
+<br  />
+<nav class="navbar is-dark"
+	role="navigation"
+	aria-label="main navigation"
+	style="border-radius: 30px; background-color: #101113;">
+  <div class="navbar-brand">
+  <a class="navbar-item" href="https://solidus.space">
+  <%= image_tag(asset_path 'solidus_logo.png', height: 28)%>
+  </a>
+
+  <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+	<span aria-hidden="true"></span>
+	<span aria-hidden="true"></span>
+	<span aria-hidden="true"></span>
+  </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+	<div class="navbar-start">
+	  <a href="/" class="navbar-item">Home</a>
+  
+	<div class="navbar-item">
+	<div class="buttons">
+	  <%= link_to "Sign up", new_user_registration_path, class: "button is-primary is-rounded"%>
+	  <%= link_to "Log in", new_user_session_path, class: "button is-light is-rounded" %>
+	</div>
+	</div>
+  </div>
+</nav>
+<br  />
+<br  /> <!-- End Nav -->
