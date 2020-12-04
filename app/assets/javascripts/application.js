@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require three/build/three.min.js
-//= require three/examples/jsm/loaders/obj2/OBJLoader2Parser.js
+//= require three/build/three.js
 //= require three/examples/js/controls/OrbitControls
 //= require three/examples/js/loaders/MTLLoader
 //= require activestorage
