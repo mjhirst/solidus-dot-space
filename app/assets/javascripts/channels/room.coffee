@@ -1,4 +1,4 @@
-jQuery(document).on 'turbolinks:load', ->
+jQuery(document).ready ->
   messages = $('#messages')
   room = messages.data('1')
 
