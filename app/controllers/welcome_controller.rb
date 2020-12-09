@@ -1,11 +1,11 @@
 class WelcomeController < ApplicationController
 	
 	def index
-		@messages = Message.all
+		
 	end
 	
-	def landing
-		
+	def backbone
+		@messages = Message.all
 	end
 	
 end
