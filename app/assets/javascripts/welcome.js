@@ -1,7 +1,12 @@
 //Load when the DOM is ready or Canvas will be null
 $(document).ready(function () {
   
-  //ThreeJS
+// - - - - - - - - - - - - - - - - - - - -
+//
+// START ThreeJS
+//
+// - - - - - - - - - - - - - - - - - - - -
+
     const canvas = document.querySelector('#c');
     renderer = new THREE.WebGLRenderer({canvas, alpha: true, antialias: true});
 
@@ -81,9 +86,58 @@ $(document).ready(function () {
       //Call function inside and loop forever
       requestAnimationFrame(render);
     }
-  //END ThreeJS
+    
+// - - - - - - - - - - - - - - - - - - - -
+//
+// END ThreeJS
+//
+// - - - - - - - - - - - - - - - - - - - -
   
-  //D3js
+// - - - - - - - - - - - - - - - - - - - -
+//
+// START Get Mouse Position
+//
+// - - - - - - - - - - - - - - - - - - - -
+  var posx = 0;
+  var posy = 0;
+
+  document.addEventListener("mousemove", onMouseMove, false);
+
+  function onMouseMove(e) {
+    posx = e.clientX;
+    posy = e.clientY;
+    App.room.speak("mouse location x:" + posy + " y:" + posx);
+    //console.log(posy, posx)
+
+    //6.
+    //Simple rotation
+    //Client X and Y swapped to make more sense and divided by 100 to stop superfast rotation
+
+    //
+    //Managed by room.coffee now
+    //
+    //cube.rotation.x = posy / 100;
+    //cube.rotation.y = -posx / 100;
+    //renderer.render(scene, camera);
+  }
+  function getMouseX() {
+    return posx;
+  }
+  function getMouseY() {
+    return posy;
+  }
+
+// - - - - - - - - - - - - - - - - - - - -
+//
+// END Get Mouse Position
+//
+// - - - - - - - - - - - - - - - - - - - -
+  
+// - - - - - - - - - - - - - - - - - - - -
+//
+// START D3JS
+//
+// - - - - - - - - - - - - - - - - - - - -
  let data = [
    {
        "Complexity": 10,
@@ -108,6 +162,7 @@ $(document).ready(function () {
        }
  ];
  
+ function startChart(data){
  //Create list of features from the data
  let features = [];
  for(var key in data[0]) features.push(key);
@@ -120,9 +175,7 @@ $(document).ready(function () {
 
  
  //https://yangdanny97.github.io/blog/2019/03/01/D3-Spider-Chart
- const d3canvas = document.querySelector('#chart-container');
- console.log(d3canvas.clientWidth, d3canvas.clientHeight);
- 
+ const d3canvas = document.querySelector('#chart-container'); 
  let svg = d3.select(d3canvas).append("svg")
  .attr("width", d3canvas.clientWidth)
  .attr("height", d3canvas.clientHeight);
@@ -207,10 +260,38 @@ for (var i = 0; i < data.length; i ++){
   .attr("stroke-opacity", 1)
   .attr("opacity", 0.66);
 }
+};
 
+// Call
+startChart(data);
 
-  });
+// - - - - - - - - - - - - - - - - - - - -
+//
+// END D3JS
+//
+// - - - - - - - - - - - - - - - - - - - -
+
+});
+
+// - - - - - - - - - - - - - - - - - - - -
+//
+// END Document Ready
+//
+// - - - - - - - - - - - - - - - - - - - -
+
+//Start Button Controls
+function myFunction(){
+  console.log("Hurrag!")
+  data = [
+  {
+    "Complexity": 10,
+    "Cost": 10,
+    "Speed": 10,
+    "Space": 10,
+    "ROI": 10
+  }];
+  startChart(data)
+}
   
-
 
   

@@ -1,12 +1,41 @@
 <body class="colour-bg-dark">
 
+<section class="hero is-fullheight-with-navbar">
+  <div class="hero-head">
+    <div class="container">
+  <%= render 'main_nav' %>
+  </div>
+  </div>
+  <div class="hero-body">
+    
 <div class="container">
-<%= render 'main_nav' %>
 
-<div class="tags has-addons">
-  <span class="tag is-dark is-rounded">clients</span>
-  <span class="tag is-rounded" style="background-color: #747679; "id="clientsTag"><%= ActionCable.server.connections.length %></span>
+<!-- Start Tags UI for ActionCable / JS -->
+<div class="field is-grouped is-grouped-multiline">
+  
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark is-rounded">clients</span>
+      <span class="tag is-rounded is-light" style="background-color: #747679; "id="clientsTag"><%= ActionCable.server.connections.length %></span>
+    </div>
+  </div>
+
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark is-rounded">x:</span>
+      <span class="tag is-rounded is-light" style="background-color: #747679; "id="mouseX">0</span>
+    </div>
+  </div>
+
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark is-rounded">y:</span>
+      <span class="tag is-rounded is-light" style="background-color: #747679; "id="mouseY">0</span>
+    </div>
+  </div>
+  
 </div>
+<!-- End Tags -->
 
 <div class="columns">
   
@@ -37,7 +66,10 @@
 
     <br  /><br  />
 
-    <a class="button is-rounded is-light" style="background-color: #FA8C00;">Wraparound
+    <a class="button is-rounded is-light" 
+    style="background-color: #FA8C00;"
+    onclick="myFunction()">
+    Wraparound
     </a>
 
 
@@ -59,5 +91,7 @@
 </div>
 
 </div> <!-- End Container -->
+  </div>
+</section> <!-- End Section -->
 
 </body>
