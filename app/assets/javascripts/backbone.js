@@ -5,11 +5,9 @@
 //
 //
 
-/*
-
-Load when the DOM is ready or Canvas will be null
-$(document).on("turbolinks:load", function () {
-  const canvas = document.querySelector("#c");
+//Load when the DOM is ready or Canvas will be null
+$(document).ready(function () {
+  const canvas = document.querySelector("#cube");
   renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
   renderer.setPixelRatio(window.devicePixelRatio); //Retina
   renderer.setSize(canvas.width, canvas.height);
