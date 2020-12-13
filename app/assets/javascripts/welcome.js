@@ -86,42 +86,38 @@ $(document).ready(function () {
   //D3js
  let data = [
    {
-     "Side Infill": {
-       "Complexity": 1,
+       "Complexity": 10,
        "Cost": 2,
        "Speed": 3,
        "Space": 4,
        "ROI": 5
      },
-     "Dormer": {
+     {
         "Complexity": 5,
         "Cost": 4,
         "Speed": 3,
         "Space": 2,
-        "ROI": 1
+        "ROI": 10
       },
-      "Mansard": {
+      {
          "Complexity": 3,
          "Cost": 5,
          "Speed": 3,
-         "Space": 1,
+         "Space": 10,
          "ROI": 4
        }
-   }
  ];
  
  //Create list of features from the data
  let features = [];
- for(var key in data[0]["Side Infill"]) features.push(key);
+ for(var key in data[0]) features.push(key);
  
- //generate the data
- for (var i = 0; i < 3; i++){
-     var point = {}
-     //each feature will be a random number from 1-9
-     features.forEach(f => point[f] = 1 + Math.random() * 8);
-     data.push(point);
+ //Connect data and features
+ for (var i = 0; i < features.length; i++) {
+   var point = {}
+   features.forEach(f => point[f] = data[0][i]);
  }
- console.log(data);
+
  
  //https://yangdanny97.github.io/blog/2019/03/01/D3-Spider-Chart
  const d3canvas = document.querySelector('#chart-container');
@@ -133,7 +129,7 @@ $(document).ready(function () {
 
  //create the scale
  let radialScale = d3.scaleLinear()
- .domain([0,10])
+ .domain([0,10]) //max number, change data position helper line/label_coords
  .range([0,125]); //Edit this for the size too
  let ticks = [2,4,6,8,10];
 
@@ -191,8 +187,13 @@ function getPathCoordinates(data_point){
   return coordinates;
 }
 
+console.log(data.length);
+
 for (var i = 0; i < data.length; i ++){
   let d = data[i];
+  
+  console.log(d);
+  console.log("CALL");
   let color = colors[i];
   let coordinates = getPathCoordinates(d);
 
