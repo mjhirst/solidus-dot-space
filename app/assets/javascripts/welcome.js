@@ -84,8 +84,36 @@ $(document).ready(function () {
   //END ThreeJS
   
   //D3js
- let data = [];
- let features = ["Complexity","Cost","Speed","Space","ROI"];
+ let data = [
+   {
+     "Side Infill": {
+       "Complexity": 1,
+       "Cost": 2,
+       "Speed": 3,
+       "Space": 4,
+       "ROI": 5
+     },
+     "Dormer": {
+        "Complexity": 5,
+        "Cost": 4,
+        "Speed": 3,
+        "Space": 2,
+        "ROI": 1
+      },
+      "Mansard": {
+         "Complexity": 3,
+         "Cost": 5,
+         "Speed": 3,
+         "Space": 1,
+         "ROI": 4
+       }
+   }
+ ];
+ 
+ //Create list of features from the data
+ let features = [];
+ for(var key in data[0]["Side Infill"]) features.push(key);
+ 
  //generate the data
  for (var i = 0; i < 3; i++){
      var point = {}
