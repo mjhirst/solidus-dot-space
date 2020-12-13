@@ -1,15 +1,63 @@
-<body style="background-color: #22262d">
+<body class="colour-bg-dark">
 
 <div class="container">
 <%= render 'main_nav' %>
 
 <div class="tags has-addons">
-  <span class="tag is-dark">clients</span>
-  <span class="tag is-success" id="clientsTag"><%= ActionCable.server.connections.length %></span>
+  <span class="tag is-dark is-rounded">clients</span>
+  <span class="tag is-rounded" style="background-color: #747679; "id="clientsTag"><%= ActionCable.server.connections.length %></span>
+</div>
+
+<div class="columns">
+  
+  <div class="column colour-bg-dark">
+
+    <a class="button is-rounded is-light" style="background-color: #FB22FA;">Side Infill
+    </a>
+
+    <br  /><br  />
+
+    <a class="button is-rounded is-light" style="background-color: #D074FF;">Dormer
+    </a>
+
+    <br  /><br  />
+
+    <a class="button is-rounded is-light" style="background-color: #5AFEFF;">Mansard
+    </a>
+
+    <br  /><br  />
+
+    <a class="button is-rounded is-light" style="background-color: #40FD87;">Dormer & Outrigger
+    </a>
+
+    <br  /><br  />
+
+    <a class="button is-rounded is-light" style="background-color: #FFFE6F;">Rear
+    </a>
+
+    <br  /><br  />
+
+    <a class="button is-rounded is-light" style="background-color: #FA8C00;">Wraparound
+    </a>
+
+
+  </div><br  />
+  
+  <div class="column is-two-thirds">
+    <div class="container">
+      <canvas id="c" style="width: 100%">
+      </canvas>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div id="chart-container" style="width: 300px; height: 300px;">
+    </div>
+
+  </div>
+
 </div>
 
 </div> <!-- End Container -->
-<div class="container">
-<canvas id="c" style="width: 100%"></canvas>
-</div>
+
 </body>
