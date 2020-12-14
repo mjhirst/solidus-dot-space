@@ -4,8 +4,8 @@ class WelcomeController < ApplicationController
 		
 	end
 	
-	def backbone
-		@messages = Message.all
+	def demo
+		
 	end
 	
 end
