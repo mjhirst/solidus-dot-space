@@ -8,32 +8,32 @@
 //Load when the DOM is ready or Canvas will be null
 $(document).ready(function () {
   const canvas = document.querySelector("#cube");
-  renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-  renderer.setPixelRatio(window.devicePixelRatio); //Retina
-  renderer.setSize(canvas.width, canvas.height);
-  renderer.outputEncoding = THREE.sRGBEncoding;
+  cubeRenderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+  cubeRenderer.setPixelRatio(window.devicePixelRatio); //Retina
+  cubeRenderer.setSize(canvas.width * 2, canvas.height * 2);
+  cubeRenderer.outputEncoding = THREE.sRGBEncoding;
 
   //1.
-  //Create a camera
+  //Create a cubeCamera
   const fov = 75;
   const aspect = 2; // the canvas default
   const near = 0.1;
   const far = 5;
-  camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.z = 2;
+  cubeCamera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  cubeCamera.position.z = 2;
 
   //2.
   //Create a Scene
-  scene = new THREE.Scene();
+  cubeScene = new THREE.Scene();
 
   //7.
-  //Add a directional light slightly above and to the left of the camera
+  //Add a directional light slightly above and to the left of the cubeCamera
   {
     const color = 0xffffff;
     const intensity = 1;
     const light = new THREE.DirectionalLight(color, intensity);
     light.position.set(-1, 2, 4);
-    scene.add(light);
+    cubeScene.add(light);
   }
 
   //3.
@@ -51,8 +51,8 @@ $(document).ready(function () {
 
   //5.
   //Add to Scene
-  scene.add(cube);
-  renderer.render(scene, camera);
+  cubeScene.add(cube);
+  cubeRenderer.render(cubeScene, cubeCamera);
 
   // Start - Get mouse position
   var posx = 0;
@@ -75,7 +75,7 @@ $(document).ready(function () {
     //
     //cube.rotation.x = posy / 100;
     //cube.rotation.y = -posx / 100;
-    //renderer.render(scene, camera);
+    //cubeRenderer.render(cubeScene, cubeCamera);
   }
   function getMouseX() {
     return posx;
@@ -85,4 +85,3 @@ $(document).ready(function () {
   }
   // End - Get mouse position
 });
-*/

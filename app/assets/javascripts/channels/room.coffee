@@ -16,16 +16,18 @@ jQuery(document).ready ->
 # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    $('#messages').append('<div>' + data['message'] + '</div>')
     x = data['message'].split(' ')
     dimx = x[2].replace('x:', '')
     dimy = x[3].replace('y:', '')
     $('#mouseX').html(dimx)
     $('#mouseY').html(dimy)
-    console.log("X", dimx, "Y", dimy);
-    #cube.rotation.x = dimx / 100
-    #cube.rotation.y = -dimy / 100
-    #renderer.render(scene, camera)
+    # console.log("X", dimx, "Y", dimy);
+    
+    if (typeof cube != "undefined")
+      cube.rotation.x = dimx / 100
+      cube.rotation.y = -dimy / 100
+      cubeRenderer.render(cubeScene, cubeCamera)
+      $('#messages').append('<div>' + data['message'] + '</div>')
 
   speak: (message) ->
     @perform 'speak', message: message
