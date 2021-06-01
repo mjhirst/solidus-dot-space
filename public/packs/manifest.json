@@ -1,0 +1,44 @@
+{
+  "application.js": "/packs/js/application-e8c5d2e8df94fc3cf3c5.js",
+  "application.js.map": "/packs/js/application-e8c5d2e8df94fc3cf3c5.js.map",
+  "backbone.js": "/packs/js/backbone-d62015a121c1e0aee6d0.js",
+  "backbone.js.map": "/packs/js/backbone-d62015a121c1e0aee6d0.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-e8c5d2e8df94fc3cf3c5.js"
+      ],
+      "js.map": [
+        "/packs/js/application-e8c5d2e8df94fc3cf3c5.js.map"
+      ]
+    },
+    "backbone": {
+      "js": [
+        "/packs/js/backbone-d62015a121c1e0aee6d0.js"
+      ],
+      "js.map": [
+        "/packs/js/backbone-d62015a121c1e0aee6d0.js.map"
+      ]
+    },
+    "radar-chart": {
+      "js": [
+        "/packs/js/radar-chart-38f6e0ef6ac43609e011.js"
+      ],
+      "js.map": [
+        "/packs/js/radar-chart-38f6e0ef6ac43609e011.js.map"
+      ]
+    },
+    "welcome": {
+      "js": [
+        "/packs/js/welcome-ef9fb3103c0b57c3592b.js"
+      ],
+      "js.map": [
+        "/packs/js/welcome-ef9fb3103c0b57c3592b.js.map"
+      ]
+    }
+  },
+  "radar-chart.js": "/packs/js/radar-chart-38f6e0ef6ac43609e011.js",
+  "radar-chart.js.map": "/packs/js/radar-chart-38f6e0ef6ac43609e011.js.map",
+  "welcome.js": "/packs/js/welcome-ef9fb3103c0b57c3592b.js",
+  "welcome.js.map": "/packs/js/welcome-ef9fb3103c0b57c3592b.js.map"
+}

@@ -1,24 +1,20 @@
-# README
+# Solidus Dot Space
+# https://solidus.space
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Solidus is a prototype platform for architectural collaboration using Open Source resources. It is built on top of Rails.
 
-Things you may want to cover:
+## Running Locally
 
-* Ruby version
+Make sure you have Ruby and Bundler installed.  If you're having trouble with Yarn or Bundler (or Ruby) it's available to install from [Homebrew](https://brew.sh/)  
 
-* System dependencies
+This project also uses [Bulma CSS](https://bulma.io) and hosts it locally need Yarn to import. Also available from Homebrew `brew install yarn`
 
-* Configuration
+```sh
+$ git clone git@github.com:ErrorCode3000/solidus-dot-space.git
+$ cd solidus
+$ bundle install
+$ yarn install
+$ bundle exec puma -C config/puma.rb
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Your app *should* now be running on [localhost:3000](http://localhost:3000/).
