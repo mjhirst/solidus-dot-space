@@ -1,7 +1,7 @@
 # Solidus Dot Space
 # https://solidus.space
 
-Solidus is a prototype platform for architectural collaboration using Open Source resources. It is built on top of Rails.
+Solidus is a prototype platform for architectural collaboration using Open Source resources. It is built on top of Rails. Initialy created as a demo for an digital design class as part of my masters of Architecture.
 
 ## Running Locally
 
